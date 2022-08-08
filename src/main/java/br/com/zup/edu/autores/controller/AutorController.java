@@ -43,7 +43,7 @@ private final AutorRepository repository;
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> remove(@PathVariable("id") Long idAutor){
 		
-		Autor autor = repository.findById(idAutor).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não existe cadastro de album para o id informado"));
+		Autor autor = repository.findById(idAutor).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não existe cadastro de autor para o id informado"));
 		
 		repository.delete(autor);
 		
